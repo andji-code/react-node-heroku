@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #88D498;
+  text-decoration: none; }
+  a::after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0;
+    transition: all .4s;
+    background: #88D498; }
+  a:hover::after {
+    width: 100%; }
+
+#app {
+  height: 100vh;
+  background: #f8f8f8;
+  color: #011936;
+  display: grid;
+  grid-template-rows: 5em 1fr 4em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "h h h"  "m m sb"  "f f f"; }
+  #app header {
+    grid-area: h; }
+  #app main {
+    grid-area: m; }
+  #app footer {
+    grid-area: f; }
+  #app #sideBar {
+    grid-area: sb; }
