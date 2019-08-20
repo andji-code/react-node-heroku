@@ -1,4 +1,4 @@
-@import "utils/vars";
+@import "vars";
 
 
 @mixin neon($color:$lite,$width:6px){
@@ -18,4 +18,12 @@
     &:hover::after{
         width: 100%;
     }
+}
+
+@mixin fly( $x:2, $y:2, $width:6, $color:$dark ){
+    box-shadow: $x+px $y+px $width+px $color;
+}
+
+@mixin fly($color:$dark ){
+    box-shadow: 3px 3px 8px lighten(#000,35);
 }

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 a {
   text-decoration: none;
   display: inline-block;
@@ -13,12 +16,16 @@ a {
   a:hover::after {
     width: 100%; }
 
+button {
+  outline: none;
+  border: none; }
+
 #app {
   height: 100vh;
   background: #f8f8f8;
   color: #011936;
   display: grid;
-  grid-template-rows: 5em 1fr 4em;
+  grid-template-rows: 5em auto 4em;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "h h h"  "m m sb"  "f f f"; }
   #app header {

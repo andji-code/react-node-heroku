@@ -1,0 +1,47 @@
+#sideBarWr {
+  padding: 5vh 0; }
+
+#sideBar {
+  height: 100%;
+  padding: 0 0;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 1vw;
+  border-left: 1px solid #011936; }
+
+button {
+  height: 14vh;
+  width: 20vw;
+  cursor: pointer;
+  color: #f8f8f8;
+  font-size: 1.9em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: transform .5s; }
+  button:hover {
+    transform: translateX(10px); }
+
+#create {
+  background-color: #00a832;
+  box-shadow: 3px 3px 8px #595959; }
+  #create:hover {
+    background-color: #00db41; }
+
+#read {
+  background-color: #0202a8;
+  box-shadow: 3px 3px 8px #595959; }
+  #read:hover {
+    background-color: #0303da; }
+
+#update {
+  background-color: #9dd406;
+  box-shadow: 3px 3px 8px #595959; }
+  #update:hover {
+    background-color: #bcf815; }
+
+#delete {
+  background-color: #a80202;
+  box-shadow: 3px 3px 8px #595959; }
+  #delete:hover {
+    background-color: #da0303; }

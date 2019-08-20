@@ -1,6 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
 a{
     text-decoration: none;
     display: inline-block;
     color: $action;
     @include text-link;
+}
+
+button{
+    outline: none;
+    border: none;
 }

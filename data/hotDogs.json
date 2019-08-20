@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "HOT_DOG_1",
+    "img": "hotDogAnon.jpg",
+    "description": "hot dog with sausage bread and tomato",
+    "ingredients": [
+      {
+        "id": 0,
+        "name": "sousage",
+        "mass": 30
+      },
+      {
+        "id": 1,
+        "name": "bread",
+        "mass": 20
+      },
+      {
+        "id": 2,
+        "name": "tomato",
+        "mass": 10
+      }
+    ],
+    "mass": 60,
+    "cost": 120
+  },
+  {
+    "id": 1,
+    "name": "HOT_DOG_2",
+    "img": "hotDogAnon.jpg",
+    "description": "hot dog with sausage and bread",
+    "ingredients": [
+      {
+        "id": 0,
+        "name": "sousage",
+        "mass": 30
+      },
+      {
+        "id": 1,
+        "name": "bread",
+        "mass": 20
+      }
+    ],
+    "mass": 50,
+    "cost": 100
+  },
+  {
+    "id": 2,
+    "name": "HOT_DOG_3",
+    "img": "hotDogAnon.jpg",
+    "description": "hot dog with sausage",
+    "ingredients": [
+      {
+        "id": 0,
+        "name": "sousage",
+        "mass": 30
+      }
+    ],
+    "mass": 30,
+    "cost": 60
+  }
+]
