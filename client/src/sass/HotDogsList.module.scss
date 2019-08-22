@@ -1,18 +1,28 @@
-@import './utils/vars.scss';
+@import './utils/mixins.scss';//also vars
 
 
 #list{
     display: grid;
     gap:2em;
     padding: 2em 4em;
+    a.editLink{
+        @include remove-text-link;
+        display: grid;
+    }
 }
 
 .hotDogWrapper{
     display:grid;
-    grid-template: 11em/1fr 3fr ;
+    grid-template-areas: 
+        "i b"
+        "i f";
+    grid-template-rows: 11em 3.4em;
+    grid-template-columns: 1fr 3fr; 
     background-color: darken($lite,3);
 }
+
 .hotDogImg{
+    grid-area: i;
     padding: 3%;
     img{    
         object-fit: cover;
@@ -21,10 +31,13 @@
         max-height: 100%;
     }
 }
+
 .hotDogBody{
+    grid-area: b;
     display:grid;
     grid-template: 3em 2em 6em/1fr;
 }
+
 .name{
     display: grid;
     align-items: center;
@@ -32,22 +45,27 @@
     font-weight: bold;
     padding-left: 2.6em;
 }
+
 .description{
     font-size: 1.2em;
     font-weight: 500;
     display: grid;
     align-items: center;
 }
+
 .info{
     display:grid;
     grid-template: 6em /3fr 1fr;
     grid-auto-flow: column;
 }
+
 .ingredients{
     display: grid;
     grid-auto-flow: row;
     align-items: center;
+    padding: 0 2em;
 }
+
 .ingredient{
     display: grid;
     grid-auto-flow: column;
@@ -56,7 +74,43 @@
     border-bottom: 1px solid darken($lite,7);
 
 }
+
+.costPerMass{
+    display: grid;
+    align-items: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .ingredientMass{
     padding-left: 2em;
     display: grid;
+}
+
+.hotDogFooter{
+    grid-area: f;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-end;
+    gap :2em;
+    padding-right: 3em;
+    padding-top: 0.4em;
+    padding-bottom: 0.5em;
+
+    button{
+        width: 6em;
+        color: $lite;
+        cursor: pointer;
+        border-radius: 4px;
+        &.edit{
+            background-color: $yellow;
+            &:hover{@include highlight($yellow);}
+        }
+        &.delete{
+            background-color: $red;
+            &:hover{@include highlight($red);}
+        }
+
+    }
 }

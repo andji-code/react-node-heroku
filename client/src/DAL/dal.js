@@ -7,25 +7,16 @@ const dal ={
         return Axios.get('/api/getHotDogs');
     },
 
-    addHotDog:()=>{
-        return Axios.post('/api/addHotDog',  {
-            "id": -1,
-            "name": "HOT_DOG_-1",
-            "img":"hotDogAnon.jpg",
-            "ingredients": [
-              {
-                  "name":"ahahhah",
-                  "mass":"999"
-              }
-            ],
-            "mass": 999,
-            "cost": 999
-          }
-        );
+    addHotDog:(hotDog)=>{
+        return Axios.post('/api/addHotDog',  hotDog);
     },
 
-    deleteHotDog:()=>{
-        return Axios.delete('/api/deleteHotDog');
+    deleteHotDog:(id)=>{
+        return Axios.delete(`/api/deleteHotDog?id=${id}`,);
+    },
+
+    editHotDog:(editedHotDog,id)=>{
+        return Axios.put(`/api/editHotDog?id=${id}`,editedHotDog);
     }
 
 }

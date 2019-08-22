@@ -1,65 +1,29 @@
-/*
-Error: Undefined variable: "$action".
-        on line 8 of D:\working area\education\deploy_react_try\reat-node-heroku\client\src\sass\utils\common.scss
+* {
+  box-sizing: border-box; }
 
-3: }
-4: 
-5: a{
-6:     text-decoration: none;
-7:     display: inline-block;
-8:     color: $action;
-9:     @include text-link;
-10: }
-11: 
-12: button{
-13:     outline: none;
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #88D498;
+  text-decoration: none; }
+  a::after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0;
+    transition: all .4s;
+    background: #88D498; }
+  a:hover::after {
+    width: 100%; }
 
-Backtrace:
-D:\working area\education\deploy_react_try\reat-node-heroku\client\src\sass\utils\common.scss:8
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-D:/programs/koalaGui/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-D:/programs/koalaGui/bin/sass:22:in `load'
-D:/programs/koalaGui/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$action\".\A         on line 8 of D:\working area\education\deploy_react_try\reat-node-heroku\client\src\sass\utils\common.scss\A \A 3: }\A 4: \A 5: a{\A 6:     text-decoration: none;\A 7:     display: inline-block;\A 8:     color: $action;\A 9:     @include text-link;\A 10: }\A 11: \A 12: button{\A 13:     outline: none;"; }
+input {
+  border: 1px solid #011936;
+  padding: 0.2em 0;
+  padding-left: 1.2em;
+  outline: none; }
+
+button {
+  outline: none;
+  border: none; }
+
+/*# sourceMappingURL=common.css.map */

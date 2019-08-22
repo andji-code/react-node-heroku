@@ -19,11 +19,21 @@
         width: 100%;
     }
 }
+@mixin remove-text-link{
+    text-decoration: none;
+    &::after{
+        display: none;
+    }
+}
 
 @mixin fly( $x:2, $y:2, $width:6, $color:$dark ){
     box-shadow: $x+px $y+px $width+px $color;
 }
 
 @mixin fly($color:$dark ){
-    box-shadow: 3px 3px 8px lighten(#000,35);
+    box-shadow: 3px 3px 8px $color;
+}
+
+@mixin highlight($bgc){
+    background-color: lighten($bgc,10);
 }

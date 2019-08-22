@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-// const hotDogs = require('./data/hotDogs.json')
 
 const app = express();
 
@@ -24,8 +23,11 @@ app.get('/api/getHotDogs', (req,res) =>{
 });
 
 app.post('/api/addHotDog', (req,res) =>{
-    const newHotDog = req.body;
+    let newHotDog = req.body;
     const hotDogs =JSON.parse(fs.readFileSync('./data/hotDogs.json'));
+    let lastId =JSON.parse(fs.readFileSync('./data/lastId.json'));
+    newHotDog.id = lastId.lastId++;
+    fs.writeFile('./data/lastId.json',JSON.stringify(lastId),()=>{});
     hotDogs.unshift(newHotDog);
     fs.writeFile('./data/hotDogs.json',JSON.stringify(hotDogs,null,2),()=>{});
     res.end();
@@ -33,12 +35,22 @@ app.post('/api/addHotDog', (req,res) =>{
 });
 
 app.delete('/api/deleteHotDog', (req,res) =>{
-    
-    const hotDogs =JSON.parse(fs.readFileSync('./data/hotDogs.json'));
-    hotDogs.shift();
+    const id = req.query.id;    
+    let hotDogs =JSON.parse(fs.readFileSync('./data/hotDogs.json'));
+    hotDogs = hotDogs.filter(hotDog=>hotDog.id != id);
     fs.writeFile('./data/hotDogs.json',JSON.stringify(hotDogs,null,2),()=>{});
     res.end();
+});
 
+app.put('/api/editHotDog', (req,res) =>{
+    const id = req.query.id;    
+    let editedHotDog = req.body;
+    let hotDogs =JSON.parse(fs.readFileSync('./data/hotDogs.json'));
+    hotDogs=hotDogs.map((hotDog=>{
+        return hotDog.id==id?editedHotDog:hotDog;
+    }));
+    fs.writeFile('./data/hotDogs.json',JSON.stringify(hotDogs,null,2),()=>{});
+    res.end();
 });
 
 // Handles any requests that don't match the ones above

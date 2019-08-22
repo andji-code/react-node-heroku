@@ -1,17 +1,19 @@
 import React from 'react'
-
+import {NavLink} from 'react-router-dom'
 
 import s from '../css/HotDogsList.module.css'
-
+import hotDogImg from '../assets/hotDogAnon.jpg'
+import EmptyListScreen from './EmptyListScreen';
 
 const HotDogsList = (props) =>{
+    
     const {hotDogs} =props;
-    let c=0;
+    
     const hotDogsList = hotDogs ? hotDogs.length>0? 
         <div id={s.list}>{hotDogs.map((hotDog)=>{
             return(
                 <div key={hotDog.id} className={s.hotDogWrapper}>
-                    <div className={s.hotDogImg}><img src={hotDog.img} alt={hotDog.name}/></div>
+                    <div className={s.hotDogImg}><img src={hotDog.img ||hotDogImg} alt={hotDog.name}/></div>
                     <div className={s.hotDogBody}>
                         <div className={s.name}>{hotDog.name}</div>
                         <div className={s.description}>{hotDog.description}</div>
@@ -25,16 +27,21 @@ const HotDogsList = (props) =>{
                                 )
                             }))}</div>
                             <div className={s.costPerMass}>
-                                <div className={s.mass}>{hotDog.mass}</div>
-                                <div className={s.cost}>{hotDog.cost}</div>
+                                <div className={s.mass}>MASS: {hotDog.mass} g.</div>
+                                <div className={s.cost}>COST: {hotDog.cost} $</div>
                             </div>
                         </div>
+                    </div>
+                    <div className={s.hotDogFooter}>
+                        <NavLink className={s.editLink} to={`/edit/${hotDog.id}`}><button className={s.edit} onClick={()=>props.editHandler(hotDog.id)}>Edit</button></NavLink>
+                        <button className={s.delete} onClick={()=>props.deleteHandler(hotDog.id)}>Delete</button>
                     </div>
                 </div>
             );
         })}
         </div>
-        : <p>No hot dogs here...</p> :null;
+        : <EmptyListScreen /> 
+        :null;
     return (
         <section id ="hotDogsList">
             {hotDogsList}

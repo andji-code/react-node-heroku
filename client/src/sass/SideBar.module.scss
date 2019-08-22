@@ -1,51 +1,53 @@
-@import './utils/mixins';
+@import './utils/mixins';//also vars
 
 #sideBarWr{padding: 5vh 0;}
+
 #sideBar{
     height: 100%;
     padding: 0 0;
     display: grid;
     align-content: center;
     justify-content: center;
-    gap:1vw;
+    gap:4vw;
     border-left: 1px solid $dark;
-}
 
-button{
-    height: 14vh;
-    width: 20vw;
-    cursor: pointer;
-    color: $lite;
-    font-size: 1.9em;
-    text-transform: uppercase;
-    border-radius: 10px;
-    transition: transform .5s;
-    &:hover{
-        transform: translateX(10px);
+    button{
+        height: 14vh;
+        width: 20vw;
+        cursor: pointer;
+        color: $lite;
+        font-size: 1.9em;
+        text-transform: uppercase;
+        border-radius: 10px;
+        transition: transform .5s;
+        @include fly(lighten(#000,35));
+        &:hover{
+            transform: translateX(10px);
+        }
+    }
+
+    a{
+        @include remove-text-link();
     }
 } 
 
 #create{
-    $bgc:rgb(0, 168, 50);
+    $bgc:$green;
     background-color: $bgc; 
-    @include fly($bgc);
-    &:hover{background-color: lighten($bgc,10);}
+    &:hover{@include highlight($bgc)}
 } 
 #read{
-    $bgc:rgb(2, 2, 168);
+    $bgc:$blue;
     background-color: $bgc; 
-    @include fly($bgc);
-    &:hover{background-color: lighten($bgc,10);}
+    &:hover{@include highlight($bgc)}
 }
 #update{
-    $bgc:rgb(157, 212, 6);
+    $bgc:$yellow;
     background-color: $bgc; 
-    @include fly($bgc);
-    &:hover{background-color: lighten($bgc,10);}
+    &:hover{@include highlight($bgc)}
 }
 #delete{
-    $bgc:rgb(168, 2, 2);
+    $bgc:$red;
     background-color: $bgc;
-     @include fly($bgc);
-     &:hover{background-color: lighten($bgc,10);}
+    &:hover{@include highlight($bgc)}
 }

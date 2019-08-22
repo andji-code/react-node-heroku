@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route,withRouter } from 'react-router-dom';
 
 
 import './css/App.css';
@@ -13,8 +13,8 @@ const App = (props) => {
   return (
     <div id="app">
         <Route path='/' render={Header} />
-        <Route exact path='/' render={ContentPage} />
-        <Route path='/' render={()=><SideBarContainer />} />
+        <Route path='/' render={ContentPage} />
+        <Route path='/' render={SideBarContainer} />
         <Route path='/' render={Footer} />
     </div>
   )
